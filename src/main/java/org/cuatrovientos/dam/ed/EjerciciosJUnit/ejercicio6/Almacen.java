@@ -73,6 +73,11 @@ public class Almacen {
 		// Math.min!!!, y me lo he hecho por mi cuenta
 		// TODO a lo mejor puedo explorar API para recoger el min o pasarlo a un metodo
 		// privado
+		return masaMin(cantidadMasas, cantidadTomate, cantidadQueso);
+
+	}
+
+	private int masaMin(int cantidadMasas, int cantidadTomate, int cantidadQueso) {
 		if (cantidadMasas < cantidadTomate) {
 			if (cantidadMasas < cantidadQueso) {
 				return cantidadMasas;
@@ -84,7 +89,6 @@ public class Almacen {
 		} else {
 			return cantidadQueso;
 		}
-
 	}
 
 	/**
