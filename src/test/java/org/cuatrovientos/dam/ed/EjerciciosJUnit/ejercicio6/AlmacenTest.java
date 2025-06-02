@@ -16,11 +16,11 @@ class AlmacenTest {
 	@Test
 	void testCantidadPizzasMargaritaOK() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Fina", 100, true, TipoIngrediente.MASA, 20); // 5
+		Ingrediente masa = new Ingrediente("Fina", 20, true, TipoIngrediente.MASA, 100); 
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente tomate = new Ingrediente("Tomate", 100, true, TipoIngrediente.SALSA, 25); // 4
+		Ingrediente tomate = new Ingrediente("Tomate", 25, true, TipoIngrediente.SALSA, 100); 
 		almacen.anadirIngredienteNuevo(tomate);
-		Ingrediente queso = new Ingrediente("Queso", 100, true, TipoIngrediente.TOPPING, 10); // 10
+		Ingrediente queso = new Ingrediente("Queso", 10, true, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(queso);
 
 		// Invoco el método cantidadPizzasMargarita
@@ -37,11 +37,11 @@ class AlmacenTest {
 	@Test
 	void testIngredientesNoAptosParaCeliacos() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Fina", 100, false, TipoIngrediente.MASA, 20);
+		Ingrediente masa = new Ingrediente("Fina", 20, false, TipoIngrediente.MASA, 100);
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente tomate = new Ingrediente("Tomate", 100, false, TipoIngrediente.SALSA, 25);
+		Ingrediente tomate = new Ingrediente("Tomate", 25, false, TipoIngrediente.SALSA, 100);
 		almacen.anadirIngredienteNuevo(tomate);
-		Ingrediente queso = new Ingrediente("Queso", 100, false, TipoIngrediente.TOPPING, 10);
+		Ingrediente queso = new Ingrediente("Queso", 10, false, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(queso);
 
 		// Invoco el método para celíacos
@@ -58,11 +58,11 @@ class AlmacenTest {
 	@Test
 	void testIngredientesNoAptosPeroParaCeliacosFalse() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Fina", 100, false, TipoIngrediente.MASA, 20);
+		Ingrediente masa = new Ingrediente("Fina", 20, false, TipoIngrediente.MASA, 100);
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente tomate = new Ingrediente("Tomate", 100, false, TipoIngrediente.SALSA, 25);
+		Ingrediente tomate = new Ingrediente("Tomate", 25, false, TipoIngrediente.SALSA, 100);
 		almacen.anadirIngredienteNuevo(tomate);
-		Ingrediente queso = new Ingrediente("Queso", 100, false, TipoIngrediente.TOPPING, 10);
+		Ingrediente queso = new Ingrediente("Queso", 10, false, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(queso);
 
 		// Invoco el método sin requerir que sean aptos para celíacos
@@ -92,9 +92,9 @@ class AlmacenTest {
 	@Test
 	void testFaltaQueso() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Fina", 100, true, TipoIngrediente.MASA, 20);
+		Ingrediente masa = new Ingrediente("Fina", 20, true, TipoIngrediente.MASA, 100);
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente tomate = new Ingrediente("Tomate", 100, true, TipoIngrediente.SALSA, 25);
+		Ingrediente tomate = new Ingrediente("Tomate", 25, true, TipoIngrediente.SALSA, 100);
 		almacen.anadirIngredienteNuevo(tomate);
 
 		// Invoco el método sin queso
@@ -110,9 +110,9 @@ class AlmacenTest {
 	@Test
 	void testFaltaTomate() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Fina", 100, true, TipoIngrediente.MASA, 20);
+		Ingrediente masa = new Ingrediente("Fina", 20, true, TipoIngrediente.MASA, 100);
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente queso = new Ingrediente("Queso", 100, true, TipoIngrediente.TOPPING, 10);
+		Ingrediente queso = new Ingrediente("Queso", 10, true, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(queso);
 
 		// Invoco el método sin tomate
@@ -128,9 +128,9 @@ class AlmacenTest {
 	@Test
 	void testFaltaMasa() {
 		Almacen almacen = new Almacen();
-		Ingrediente tomate = new Ingrediente("Tomate", 100, true, TipoIngrediente.SALSA, 25);
+		Ingrediente tomate = new Ingrediente("Tomate", 25, true, TipoIngrediente.SALSA, 100);
 		almacen.anadirIngredienteNuevo(tomate);
-		Ingrediente queso = new Ingrediente("Queso", 100, true, TipoIngrediente.TOPPING, 10);
+		Ingrediente queso = new Ingrediente("Queso", 10, true, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(queso);
 
 		// Invoco el método sin masa
@@ -146,11 +146,11 @@ class AlmacenTest {
 	@Test
 	void testNombreMasaIrrelevante() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Normal", 100, true, TipoIngrediente.MASA, 20);
+		Ingrediente masa = new Ingrediente("Normal", 20, true, TipoIngrediente.MASA,100);
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente tomate = new Ingrediente("Tomate", 100, true, TipoIngrediente.SALSA, 25);
+		Ingrediente tomate = new Ingrediente("Tomate", 25, true, TipoIngrediente.SALSA, 100);
 		almacen.anadirIngredienteNuevo(tomate);
-		Ingrediente queso = new Ingrediente("Queso", 100, true, TipoIngrediente.TOPPING, 10);
+		Ingrediente queso = new Ingrediente("Queso", 10, true, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(queso);
 
 		// Invoco el método con masa de nombre distinto
@@ -166,11 +166,11 @@ class AlmacenTest {
 	@Test
 	void testNombreSalsaIncorrecto() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Fina", 100, true, TipoIngrediente.MASA, 20);
+		Ingrediente masa = new Ingrediente("Fina", 20, true, TipoIngrediente.MASA, 100);
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente salsa = new Ingrediente("Nata", 100, true, TipoIngrediente.SALSA, 25);
+		Ingrediente salsa = new Ingrediente("Nata", 25, true, TipoIngrediente.SALSA, 100);
 		almacen.anadirIngredienteNuevo(salsa);
-		Ingrediente queso = new Ingrediente("Queso", 100, true, TipoIngrediente.TOPPING, 10);
+		Ingrediente queso = new Ingrediente("Queso", 10, true, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(queso);
 
 		// Invoco el método sin salsa de tomate
@@ -186,11 +186,11 @@ class AlmacenTest {
 	@Test
 	void testNombreToppingIncorrecto() {
 		Almacen almacen = new Almacen();
-		Ingrediente masa = new Ingrediente("Fina", 100, true, TipoIngrediente.MASA, 20);
+		Ingrediente masa = new Ingrediente("Fina", 20, true, TipoIngrediente.MASA, 100);
 		almacen.anadirIngredienteNuevo(masa);
-		Ingrediente tomate = new Ingrediente("Tomate", 100, true, TipoIngrediente.SALSA, 25);
+		Ingrediente tomate = new Ingrediente("Tomate", 25, true, TipoIngrediente.SALSA, 100);
 		almacen.anadirIngredienteNuevo(tomate);
-		Ingrediente topping = new Ingrediente("Mozzarella", 100, true, TipoIngrediente.TOPPING, 10);
+		Ingrediente topping = new Ingrediente("Mozzarella", 10, true, TipoIngrediente.TOPPING, 100);
 		almacen.anadirIngredienteNuevo(topping);
 
 		// Invoco el método sin topping llamado "Queso"
